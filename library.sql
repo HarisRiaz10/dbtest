@@ -16,7 +16,7 @@ DROP SCHEMA IF EXISTS `librarysystemm` ;
 -- -----------------------------------------------------
 -- Schema librarysystemm
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `librarysystemm` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+CREATE SCHEMA IF NOT EXISTS `librarysystemm` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8_general_ci ;
 SHOW WARNINGS;
 USE `librarysystemm` ;
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `chi_tiet_phieu_muon` (
   PRIMARY KEY (`MAPHIEU`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8_general_ci;
 
 SHOW WARNINGS;
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `phieu_muon` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8_general_ci;
 
 SHOW WARNINGS;
 CREATE INDEX `fk_phieu_muon_chi_tiet_phieu_muon1_idx` ON `phieu_muon` (`chi_tiet_phieu_muon_MAPHIEU` ASC) VISIBLE;
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `doc_gia` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8_general_ci;
 
 SHOW WARNINGS;
 CREATE INDEX `fk_doc_gia_phieu_muon1_idx` ON `doc_gia` (`phieu_muon_MAPHIEU` ASC) VISIBLE;
@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `sach` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8_general_ci;
 
 SHOW WARNINGS;
 CREATE INDEX `fk_sach_chi_tiet_phieu_muon_idx` ON `sach` (`chi_tiet_phieu_muon_MAPHIEU` ASC) VISIBLE;
@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `nha_xb` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8_general_ci;
 
 SHOW WARNINGS;
 CREATE INDEX `fk_nha_xb_sach1_idx` ON `nha_xb` (`sach_MASACH` ASC) VISIBLE;
@@ -180,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `nhan_vien` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8_general_ci;
 
 SHOW WARNINGS;
 CREATE INDEX `fk_nhan_vien_phieu_muon1_idx` ON `nhan_vien` (`phieu_muon_MAPHIEU` ASC) VISIBLE;
@@ -205,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `the_loai` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8_general_ci;
 
 SHOW WARNINGS;
 CREATE INDEX `fk_the_loai_sach1_idx` ON `the_loai` (`sach_MASACH` ASC) VISIBLE;
